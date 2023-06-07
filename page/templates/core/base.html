@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %} KSBU CCLUB</title>
+
+  <link rel="icon" href="https://picsum.photos/200">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <!-- STYLE -->
+
+  <style type="text/css">body,html{height:100%;margin:0;height:100%}b,strong{font-weight:bold}body>.container{min-height:90vh}.navbar>.d-flex{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;margin-left:auto;margin-right:auto;padding-left:auto;padding-right:auto;padding-top:5px;padding-bottom:5px}.navbar img{max-width:60px;height:auto}.navbar li{font-size:1.2rem;text-align:center}.jumbotron img{width:100%}.jumbotron,.jumbotron .lead{font-size:1.1rem !important}.carousel-overlay{background:linear-gradient(to bottom,rgba(255,255,255,0),#000);bottom:-2.5px;left:0;opacity:.9;position:absolute;right:0;top:0;z-index:1}.footer{color:#aaa;padding:7px;text-align:center;width:100% !important}#contact-links li{list-style-type:none;font-size:1.2rem}.jumbotron{margin-top:10px;background:#ccc}.carousel-title{color:#fff;font-size:3em;text-shadow:5px 5px 5px rgba(0,0,0,0.6)}.carousel-subtitle{font-size:2em;text-shadow:4px 4px 4px rgba(0,0,0,0.4);color:#fff}.carousel-caption{padding-bottom:50px}.carousel-inner .carousel-item img{position:relative;top:50%;transform:translateY(-50%);z-index:-1;height:100%}.youtube{background-color:#000;margin-bottom:30px;position:relative;padding-top:56.25%;overflow:hidden;cursor:pointer}.youtube img{width:100%;top:-16.84%;left:0;opacity:.8}.youtube .play-button{width:90px;height:60px;background-color:#333;box-shadow:0 0 30px rgba(0,0,0,0.3);z-index:1;opacity:.8;border-radius:10px}.youtube .play-button:before{content:"";border-style:solid;border-width:15px 0 15px 26.0px;border-color:transparent transparent transparent #fff}.youtube img,.youtube .play-butinfoton{cursor:pointer}.youtube img,.youtube iframe,.youtube .play-button,.youtube .play-button:before{position:absolute}.youtube .play-button,.youtube .play-button:before{top:50%;left:50%;transform:translate3d(-50%,-50%,0)}.youtube iframe{height:100%;width:100%;top:0;left:0}.announcement>img{float:left;max-width:50%}.event>img{float:left;max-width:50%}.event .event-images img{width:100%;height:100%;object-fit:cover}.useful-links ul{list-style:none;font-size:1.1rem}.useful-links li{margin:4px 0}.change-lang-link span{color:rgba(255,255,255,0.5)}.change-lang-link span.active{color:rgba(255,255,255,1)}.sponsors{background-color:#fefefe;padding:40px 10px}.sponsors div{text-align:center}.sponsors img{width:100%}ul li[type="circle"]{margin-left:10px;margin-bottom:10px}.contest-rules,.supported-languages{font-size:1.2rem}.faq li:not([type="circle"]){font-size:1.2rem;font-weight:bold}.faq li[type="circle"]{font-size:1.1rem}@media only screen and (max-width:600px){.carousel-title{color:#fff;font-size:2em;text-shadow:5px 5px 5px rgba(0,0,0,0.6)}.carousel-subtitle{font-size:1em;text-shadow:4px 4px 4px rgba(0,0,0,0.4);color:#fff}}@media only screen and (min-width:1200px){.carousel-item{width:100%;height:65vh}.carousel-item img{object-fit:cover}.change-lang-link{position:absolute;right:7px}.jumbotron,.jumbotron .lead{font-size:1.2rem !important}.navbar-brand{position:absolute;left:7px}}@media only screen and (max-width:1200px){.carousel-item{height:55vh}.carousel-item img{object-fit:cover}}</style>
+
+    <style>
+body,
+html
+.navbar {
+    /* background: #343a40 !important; */
+    /*background: #031B30 !important;*/
+    /*background: #1e0434 !important;*/
+    background: #767676! important;
+}
+.carousel-item {
+    height: 30vh !important;
+}
+@media screen and (min-width: 900px) {
+.carousel-item {
+    height: 45vh !important;
+}
+}
+@media screen and (min-width: 1200px) {
+.carousel-item {
+    height: 75vh !important;
+}
+}
+</style>
+  
+    <!-- STYLE END -->
+
+</head>
+
+<body>
+  
+    <!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="d-flex">
+    <a class="navbar-brand" href="{% url 'about_us' %}">
+      <img src="#" alt="CClub">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item ">
+          <a class="nav-link{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Anasayfa</a>
+        </li>
+        
+        <li class="nav-item ">
+            
+          <a class="nav-link{% if request.path == '/hakkimizda/' %}active{% endif %}" href="{% url 'about_us' %}">Hakkımızda</a>
+        
+      </li>
+
+          <li class="nav-item ">
+            
+              <a class="nav-link{% if request.path == '/duyurular/' %}active{% endif %}" href="{% url 'announcement_us' %}">Duyurular</a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a class="nav-link{% if request.path == '/faydali-linkler/' %}active{% endif %}" href="{% url 'links_us' %}">Faydalı Linkler</a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a class="nav-link{% if request.path == '/iletisim/' %}active{% endif %}" href="{% url 'contact_us' %}">İletişim</a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a class="nav-link {% if request.path == '/ekibimiz/' %}active{% endif %}" href="{% url 'director_us' %}">Ekibimiz</a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a class="nav-link{% if request.path == '/projeler/' %}active{% endif %}"  href="{% url 'project_us' %}">Projeler</a>
+            
+          </li>
+        
+
+        <!-- <li class="nav-item">
+          <a class="change-lang-link nav-link" href="/toggle-lang/?next=/">
+            
+              <span class="active">TR</span> | <span>EN</span>
+             -->
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- NAVBAR END -->
+
+  {% block content %}
+  {% endblock content %}
+
+    <!-- Sponsor -->
+
+      <div class="sponsors d-flex justify-content-center">
+        <div class="sponsors justify-content-center">
+          <div class="container">
+            <h1 class="mb-5">Sponsorlar</h1>
+            <p> Belki bir gün olur :/</p>
+          </div>
+        </div>
+      </div>
+      <!-- Sponsor END-->
+      <!-- footer-->
+      <footer class="footer">
+      <div class="container">
+        KSBU Bilgisayar Topluluğu &copy;
+        2023
+      </div>
+    </footer>
+      <!-- footer-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</body>
+</html>
